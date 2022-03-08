@@ -1,1 +1,1 @@
-# -argocd-helm-app-of-apps
+# argocd-helm-app-of-apps

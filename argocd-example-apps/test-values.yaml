@@ -1,0 +1,36 @@
+envName: test
+
+default:
+  app:
+    project: test
+
+    source:
+      repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
+      targetRevision: HEAD
+
+    destination:
+      namespace: test
+      server: https://kubernetes.default.svc  
+
+
+applications:
+  apache:
+    enabled: true
+    enableAutoSync: true
+
+    source:
+      path: charts/apache
+
+  helm-nginx:
+    enabled: true
+    enableAutoSync: true
+
+    source:
+      path: charts/helm-nginx
+
+  kustomize-guestbook:
+    enabled: true
+    enableAutoSync: true
+
+    source:
+      path: charts/kustomize-guestbook

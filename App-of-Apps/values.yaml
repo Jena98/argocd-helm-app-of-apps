@@ -1,15 +1,12 @@
 apps:
   - appname: apache
-    destination: 
-      namespace: my-apps
+    destns: my-apps
     projectname: apps
 
   - appname: helm-nginx
-    destination: 
-      namespace: my-apps
+    destns: my-apps
     projectname: apps
 
   - appname: kustomize-guestbook
-    destination: 
-      namespace: my-apps
+    destns: my-apps
     projectname: apps

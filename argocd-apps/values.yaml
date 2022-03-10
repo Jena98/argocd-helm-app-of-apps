@@ -26,7 +26,7 @@ applications:
       server: https://kubernetes.default.svc
     #project: test
     source:
-      path: charts/apache
+      path: argocd-apps/charts/apache
       repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
 
   helm-nginx:
@@ -36,7 +36,7 @@ applications:
       server: https://kubernetes.default.svc
     #project: test
     source:
-      path: charts/helm-nginx
+      path: argocd-apps/charts/helm-nginx
       repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
 
   kustomize-guestbook:
@@ -46,5 +46,5 @@ applications:
       server: https://kubernetes.default.svc
     #project: test
     source:
-      path: charts/kustomize-guestbook
+      path: argocd-apps/charts/kustomize-guestbook
       repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git

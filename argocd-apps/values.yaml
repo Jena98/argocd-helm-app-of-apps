@@ -1,0 +1,86 @@
+# your override should supply an envName
+envName: null
+
+# if set, override all Applications to use this project
+projectOverride: null
+
+
+default:
+  project:
+    roles: |
+      - name: read-only
+        description: Read-only privileges within project
+        policies:
+        - p, proj:{{ $.curProjName }}:read-only, applications, get, {{ $.curProjName }}/*, allow
+      - name: ci-role
+        description: Role to allow CICD pipeline to sync apps within project
+        policies:
+        - p, proj:{{ $.curProjName }}:ci-role, applications, sync, {{ $.curProjName }}/*, allow
+    destinations: |
+      - namespace: {{ $.Values.default.app.destination.namespace | required "Missing proj dest namespace"}}
+        server: {{ $.Values.default.app.destination.server | required "Missing proj dest server" }}
+  app:
+    enableAutoSync: null
+    autoSyncPrune: true
+    destination:
+      namespace: null
+      server: null
+    project: null
+    source:
+      path: null
+      repoURL: null
+      targetRevision: HEAD
+
+      #extraSourceFields: |
+        #helm:
+          #valueFiles:
+          #- {{ $.Values.envName }}-values.yaml
+      #  kustomize:
+      #    namePrefix: prod-
+    #extraFields: |
+    #  Default fields you want on all applications, unless the app individually overrides
+
+projects:
+
+  apps:
+    description: 'application apps'
+    sourceRepos:
+    - https://github.com/jenana-devops/argocd-helm-app-of-apps
+
+  #onboarding:
+    #description: 'onboarding services -- user PII, etc'
+    #sourceRepos:
+    #- https://MY_APPS_REPOSITORY/onboarding/*
+
+
+applications:
+
+  apache:
+    enabled: true
+    destination:
+      namespace: my-apps
+      server: https://kubernetes.default.svc
+    project: apps
+    source:
+      path: charts/apache
+      repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
+
+  helm-nginx:
+    enabled: true
+    destination:
+      namespace: my-apps
+      server: https://kubernetes.default.svc
+    project: apps
+    source:
+      path: charts/helm-nginx
+      repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
+
+  kustomize-guestbook:
+    enabled: true
+    destination:
+      namespace: my-apps
+      server: https://kubernetes.default.svc
+    project: apps
+    source:
+      path: charts/kustomize-guestbook
+      repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git

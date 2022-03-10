@@ -4,12 +4,12 @@ envName: null
 # if set, override all Applications to use this project
 projectOverride: null
 
-projects:
+#projects:
 
-  test:
-    description: 'application apps'
-    sourceRepos:
-    - https://github.com/jenana-devops/argocd-helm-app-of-apps
+  #test:
+    #description: 'application apps'
+    #sourceRepos:
+    #- https://github.com/jenana-devops/argocd-helm-app-of-apps
 
   #onboarding:
     #description: 'onboarding services -- user PII, etc'
@@ -24,7 +24,7 @@ applications:
     destination:
       namespace: my-apps
       server: https://kubernetes.default.svc
-    project: test
+    #project: test
     source:
       path: charts/apache
       repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
@@ -34,7 +34,7 @@ applications:
     destination:
       namespace: my-apps
       server: https://kubernetes.default.svc
-    project: test
+    #project: test
     source:
       path: charts/helm-nginx
       repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
@@ -44,7 +44,7 @@ applications:
     destination:
       namespace: my-apps
       server: https://kubernetes.default.svc
-    project: test
+    #project: test
     source:
       path: charts/kustomize-guestbook
       repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git

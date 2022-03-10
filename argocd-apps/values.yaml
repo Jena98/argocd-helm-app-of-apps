@@ -1,8 +1,8 @@
 # your override should supply an envName
-envName: null
+#envName: null
 
 # if set, override all Applications to use this project
-projectOverride: null
+#projectOverride: null
 
 #projects:
 

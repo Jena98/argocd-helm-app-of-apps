@@ -14,3 +14,8 @@ apps:
     destination:
       namespace: my-apps
 
+  - appname: helm-guestbook
+    projectname: apps
+    destination:
+      namespace: my-apps
+

@@ -5,28 +5,33 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ $key }}
-  namespace: argocd
+  namespace: {{ val.namespace | default $.Values.default.app.namespace }}
 spec:
-  project: {{ $val.projectname }}
+  project: {{ $val.project | default $.Values.default.app.project }}
 
   source:
     path: {{ $key }}
-    repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
-    targetRevision: HEAD
+    repoURL: {{ $val.source.repoURL | default $.Values.default.app.source.repoURL }}
+    targetRevision: {{ $val.source.targetRevision | default $.Values.default.app.source.repoURL }}
     helm:
       valueFiles:
         - values.yaml
-
+        - {{ $val.source.helm.valueFiles }}
+  
   destination:
     namespace: {{ $val.destination.namespace }}
-    server: 'https://kubernetes.default.svc'
+    server: {{ $val.destination.server }}
 
+  {{- if $val.autoSync | default $.Values.default.app.autoSync }}
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: {{ $val.autoSyncPrune | default $.Values.default.app.autoSyncPrune }}
+      selfHeal: {{ $val.autoSyncselfHeal | default $.Values.default.app.autoSyncselfHeal }}
+    {{- if $val.autoSyncCreateNamespace | default $.Values.default.app.autoSyncCreateNamespace }}  
     syncOptions:
       - CreateNamespace=true
+    {{- end }}     
+  {{- end }}    
 ---      
 {{- end }}
 {{- end }}

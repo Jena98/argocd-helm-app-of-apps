@@ -1,25 +1,72 @@
+default:
+  app:
+    namespace: argocd
+    project: apps
+    source:
+      repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
+      targetRevision: HEAD
+      helm:
+        valueFiles: null
+    destination:
+      namespace: my-apps
+      server: https://kubernetes.default.svc   
+    autoSync: true
+    autoSyncPrune: true
+    autoSyncselfHeal: true
+    autoSyncCreateNamespace: true     
+
+
 apps:
   apache:
     enabled: true
-    projectname: apps
+    project: apps
+    source:
+      repoURL: null
+      targetRevision: null
+      helm:
+        valueFiles: null
     destination:
       namespace: my-apps  
+      server: null
+    autoSync: null
+    autoSyncPrune: null
+    autoSyncselfHeal: null
+    autoSyncCreateNamespace: null
 
   helm-nginx:
     enabled: true
-    projectname: apps
+    project: apps
+    source:
+      repoURL: null
+      targetRevision: null
+      helm:
+        valueFiles: null
     destination:
       namespace: my-apps  
+      server: null
+    autoSync: null
+    autoSyncPrune: null
+    autoSyncselfHeal: null
+    autoSyncCreateNamespace: null
 
   helm-guestbook:
     enabled: true
-    projectname: apps
+    project: apps
+    source:
+      repoURL: null
+      targetRevision: null
+      helm:
+        valueFiles: null
     destination:
       namespace: my-apps  
+      server: null
+    autoSync: null
+    autoSyncPrune: null
+    autoSyncselfHeal: null
+    autoSyncCreateNamespace: null
 
-  #- appname: apache
-    #projectname: apps
-    #destination:
-      #namespace: my-apps
+
+
+
 
 

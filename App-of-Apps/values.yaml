@@ -3,13 +3,13 @@ default:
     namespace: argocd
     project: apps
     source:
-      repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
+      repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
       targetRevision: HEAD
       #helm:
         #valueFiles: null
     destination:
       namespace: my-apps
-      server: https://kubernetes.default.svc   
+      server: "https://kubernetes.default.svc"   
     autoSync: true
 
 

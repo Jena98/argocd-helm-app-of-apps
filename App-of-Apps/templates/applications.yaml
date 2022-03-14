@@ -11,7 +11,7 @@ spec:
 
   source:
     path: {{ $key }}
-    repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
+    repoURL: {{ $val.source.repoURL | default $.Values.default.app.source.repoURL }}
     targetRevision: HEAD
     helm:
       valueFiles:

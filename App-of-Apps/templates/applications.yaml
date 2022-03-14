@@ -1,15 +1,16 @@
-{{- range $app := .Values.apps }}
+{{- range $key, $val := .Values.apps }}
+{{- if $val.enabled }}
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ $app.appname }}
+  name: {{ $key }}
   namespace: argocd
 spec:
-  project: {{ $app.projectname }}
+  project: {{ $val.projectname }}
 
   source:
-    path: {{ $app.appname }}
+    path: {{ $key }}
     repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
     targetRevision: HEAD
     helm:
@@ -17,7 +18,7 @@ spec:
         - values.yaml
 
   destination:
-    namespace: {{ $app.destination.namespace }}
+    namespace: {{ $val.destination.namespace }}
     server: 'https://kubernetes.default.svc'
 
   syncPolicy:
@@ -27,4 +28,5 @@ spec:
     syncOptions:
       - CreateNamespace=true
 ---      
+{{- end }}
 {{- end }}

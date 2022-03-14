@@ -1,21 +1,25 @@
 apps:
-  - appname: apache
+  apache:
+    enabled: true
     projectname: apps
     destination:
-      namespace: my-apps
+      namespace: my-apps  
 
-  - appname: helm-nginx
+  helm-nginx:
+    enabled: true
     projectname: apps
     destination:
-      namespace: my-apps
-    
-  - appname: kustomize-guestbook
-    projectname: apps
-    destination:
-      namespace: my-apps
+      namespace: my-apps  
 
-  - appname: helm-guestbook
+  helm-guestbook:
+    enabled: true
     projectname: apps
     destination:
-      namespace: my-apps
+      namespace: my-apps  
+
+  #- appname: apache
+    #projectname: apps
+    #destination:
+      #namespace: my-apps
+
 

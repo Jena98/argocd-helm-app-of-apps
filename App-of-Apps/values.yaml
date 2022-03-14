@@ -1,3 +1,7 @@
+default:
+  app:
+    namespace: argocd
+
 apps:
   apache:
     enabled: true

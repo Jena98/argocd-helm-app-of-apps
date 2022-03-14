@@ -12,15 +12,15 @@ spec:
   source:
     path: {{ $key }}
     repoURL: {{ $val.source.repoURL | default $.Values.default.app.source.repoURL }}
-    targetRevision: {{ $val.source.targetRevision | default $.Values.default.app.source.repoURL }}
+    targetRevision: {{ $val.source.targetRevision | default $.Values.default.app.source.targetRevision }}
     helm:
       valueFiles:
         - values.yaml
         #- {{ $val.source.helm.valueFiles }}
   
   destination:
-    namespace: {{ $val.destination.namespace }}
-    server: {{ $val.destination.server }}
+    namespace: {{ $val.destination.namespace | default $.Values.default.app.destination.namespace }}
+    server: {{ $val.destination.server | default $.Values.default.app.destination.server }}
 
   {{- if $val.autoSync | default $.Values.default.app.autoSync }}
   syncPolicy:

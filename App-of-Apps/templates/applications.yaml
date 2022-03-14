@@ -11,14 +11,15 @@ spec:
 
   source:
     path: {{ $key }}
-    repoURL: {{ $val.source.repoURL | default $.Values.default.app.source.repoURL }}
+    # {{ $val.source.repoURL | default $.Values.default.app.source.repoURL }} error
+    repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
     targetRevision: HEAD
     helm:
       valueFiles:
         - values.yaml
 
   destination:
-    namespace: {{ $val.destination.namespace }}
+    namespace: {{ $val.destination.namespace | default $.Values.default.app.destination.namespace }}
     server: 'https://kubernetes.default.svc'
 
   syncPolicy:

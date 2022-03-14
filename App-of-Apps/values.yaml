@@ -2,8 +2,10 @@ default:
   app:
     namespace: argocd
     project: apps
-    source:
-      repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
+    destination:
+      namespace: my-apps
+
+    
 
 apps:
   apache:

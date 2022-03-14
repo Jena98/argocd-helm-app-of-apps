@@ -5,8 +5,8 @@ default:
     source:
       repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
       targetRevision: HEAD
-      helm:
-        valueFiles: null
+      #helm:
+        #valueFiles: null
     destination:
       namespace: my-apps
       server: https://kubernetes.default.svc   
@@ -21,8 +21,8 @@ apps:
     source:
       repoURL: null
       targetRevision: null
-      helm:
-        valueFiles: null
+      #helm:
+        #valueFiles: null
     destination:
       namespace: my-apps  
       server: null
@@ -35,8 +35,8 @@ apps:
     source:
       repoURL: null
       targetRevision: null
-      helm:
-        valueFiles: null
+      #helm:
+        #valueFiles: null
     destination:
       namespace: my-apps  
       server: null
@@ -49,8 +49,8 @@ apps:
     source:
       repoURL: null
       targetRevision: null
-      helm:
-        valueFiles: null
+      #helm:
+        #valueFiles: null
     destination:
       namespace: my-apps  
       server: null

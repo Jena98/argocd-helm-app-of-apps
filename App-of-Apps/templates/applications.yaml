@@ -16,7 +16,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-        - {{ $val.source.helm.valueFiles }}
+        #- {{ $val.source.helm.valueFiles }}
   
   destination:
     namespace: {{ $val.destination.namespace }}

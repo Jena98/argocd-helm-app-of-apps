@@ -10,7 +10,7 @@ default:
     destination:
       namespace: my-apps
       server: "https://kubernetes.default.svc"   
-    autoSync: true
+    #autoSync: true
 
 
 
@@ -27,7 +27,7 @@ apps:
     #destination:
       #namespace: my-apps  
       #server: null
-    autoSync: null
+    autoSync: true
 
 
   helm-nginx:
@@ -41,7 +41,7 @@ apps:
     #destination:
       #namespace: my-apps  
       #server: null
-    autoSync: null
+    autoSync: true
 
 
   helm-guestbook:
@@ -55,7 +55,7 @@ apps:
     #destination:
       #namespace: my-apps  
       #server: null
-    autoSync: null
+    autoSync: true
 
 
 

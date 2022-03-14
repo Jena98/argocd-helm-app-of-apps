@@ -19,7 +19,8 @@ spec:
         - values.yaml
 
   destination:
-    namespace: {{ $val.destination.namespace | default $.Values.default.app.destination.namespace }}
+    # {{ $val.destination.namespace | default $.Values.default.app.destination.namespace }} error
+    namespace: my-apps
     server: 'https://kubernetes.default.svc'
 
   syncPolicy:

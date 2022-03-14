@@ -2,8 +2,6 @@ default:
   app:
     namespace: argocd
     project: apps
-    destination:
-      namespace: my-apps
 
     
 

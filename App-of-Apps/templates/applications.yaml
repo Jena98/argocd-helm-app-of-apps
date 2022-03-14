@@ -7,7 +7,7 @@ metadata:
   name: {{ $key }}
   namespace: {{ $val.namespace | default $.Values.default.app.namespace }}
 spec:
-  project: {{ $val.projectname }}
+  project: {{ $val.project | default $.Values.default.app.project }}
 
   source:
     path: {{ $key }}

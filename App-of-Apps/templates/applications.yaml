@@ -25,12 +25,10 @@ spec:
   {{- if $val.autoSync | default $.Values.default.app.autoSync }}
   syncPolicy:
     automated:
-      prune: {{ $val.autoSyncPrune | default $.Values.default.app.autoSyncPrune }}
-      selfHeal: {{ $val.autoSyncselfHeal | default $.Values.default.app.autoSyncselfHeal }}
-    {{- if $val.autoSyncCreateNamespace | default $.Values.default.app.autoSyncCreateNamespace }}  
+      prune: true
+      selfHeal: true
     syncOptions:
-      - CreateNamespace=true
-    {{- end }}     
+      - CreateNamespace=true 
   {{- end }}    
 ---      
 {{- end }}

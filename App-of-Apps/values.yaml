@@ -11,9 +11,7 @@ default:
       namespace: my-apps
       server: https://kubernetes.default.svc   
     autoSync: true
-    autoSyncPrune: true
-    autoSyncselfHeal: true
-    autoSyncCreateNamespace: true     
+
 
 
 apps:
@@ -29,9 +27,7 @@ apps:
       namespace: my-apps  
       server: null
     autoSync: null
-    autoSyncPrune: null
-    autoSyncselfHeal: null
-    autoSyncCreateNamespace: null
+
 
   helm-nginx:
     enabled: true
@@ -45,9 +41,7 @@ apps:
       namespace: my-apps  
       server: null
     autoSync: null
-    autoSyncPrune: null
-    autoSyncselfHeal: null
-    autoSyncCreateNamespace: null
+
 
   helm-guestbook:
     enabled: true
@@ -61,9 +55,7 @@ apps:
       namespace: my-apps  
       server: null
     autoSync: null
-    autoSyncPrune: null
-    autoSyncselfHeal: null
-    autoSyncCreateNamespace: null
+
 
 
 

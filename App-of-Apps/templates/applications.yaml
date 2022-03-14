@@ -22,7 +22,7 @@ spec:
     namespace: {{ $val.destination.namespace | default $.Values.default.app.destination.namespace }}
     server: {{ $val.destination.server | default $.Values.default.app.destination.server }}
 
-  {{- if $val.autoSync | default $.Values.default.app.autoSync }}
+  {{- if $val.autoSync }}
   syncPolicy:
     automated:
       prune: true

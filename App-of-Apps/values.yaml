@@ -27,7 +27,7 @@ apps:
     #destination:
       #namespace: my-apps  
       #server: null
-    #autoSync: null
+    autoSync: null
 
 
   helm-nginx:
@@ -41,7 +41,7 @@ apps:
     #destination:
       #namespace: my-apps  
       #server: null
-    #autoSync: null
+    autoSync: null
 
 
   helm-guestbook:
@@ -55,7 +55,7 @@ apps:
     #destination:
       #namespace: my-apps  
       #server: null
-    #autoSync: null
+    autoSync: null
 
 
 

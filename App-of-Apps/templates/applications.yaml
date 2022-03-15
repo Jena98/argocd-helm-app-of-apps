@@ -20,7 +20,7 @@ spec:
         - values.yaml
 
   destination:
-    namespace: my-apps
+    namespace: {{ $val.destination.namespace }}
     server: "https://kubernetes.default.svc"
 
   {{- if $val.autoSync | default $.Values.default.app.autoSync }}

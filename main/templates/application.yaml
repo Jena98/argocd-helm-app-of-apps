@@ -1,23 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: aaa
+  name: aaa-main
   namespace: argocd
   
 spec:
+  project: apps
+
   source:
-    path: App-of-Apps
-    repoURL: 'https://github.com/jenana-devops/argocd-helm-app-of-apps.git'
+    path: {{ $.Values.source.path }}
+    repoURL: {{ $.Values.source.repoURL }}
     targetRevision: HEAD
     helm:
       valueFiles:
         - values.yaml
 
   destination:
-    namespace: 'default'
-    server: 'https://kubernetes.default.svc'
+    namespace: default
+    server: "https://kubernetes.default.svc"
 
-  project: apps
   syncPolicy:
     automated:
       prune: true

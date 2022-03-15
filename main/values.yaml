@@ -1,0 +1,7 @@
+source:
+  path: App-of-Apps
+  repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
+
+
+
+

@@ -11,8 +11,6 @@ spec:
 
   source:
     path: {{ $key }}
-    # {{ $val.source.repoURL | default $.Values.default.app.source.repoURL }} error
-    # default 에 app.a.b 로 넘어가면 에러가 뜬다 app.a 까지 가능
     repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
     targetRevision: HEAD
     helm:
@@ -20,17 +18,15 @@ spec:
         - values.yaml
 
   destination:
-    namespace: {{ $val.destination.namespace }}
+    namespace: my-apps
     server: "https://kubernetes.default.svc"
 
-  #{{- if $val.autoSync | default $.Values.default.app.autoSync }}
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
-  #{{- end }}    
+      - CreateNamespace=true  
 ---      
 {{- end }}
 {{- end }}

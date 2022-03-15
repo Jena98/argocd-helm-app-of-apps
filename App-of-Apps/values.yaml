@@ -7,18 +7,18 @@ default:
 apps:
   apache:
     enabled: true
-    project: apps
+    project: null
     autoSync: true
 
   helm-nginx:
     enabled: true
-    project: apps
+    project: null
     autoSync: true
  
 
   helm-guestbook:
     enabled: true
-    project: apps
+    project: null
     autoSync: true
 
 

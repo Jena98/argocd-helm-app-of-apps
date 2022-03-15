@@ -7,7 +7,7 @@ default:
 apps:
   apache:
     enabled: true
-    namespace: null
+    #namespace: null
     project: apps
     destination:
       namespace: my-apps-1
@@ -15,7 +15,7 @@ apps:
 
   helm-nginx:
     enabled: true
-    namespace: null
+    #namespace: null
     project: apps
     destination:
       namespace: my-apps-2  
@@ -23,7 +23,7 @@ apps:
 
   helm-guestbook:
     enabled: true
-    namespace: null
+    #namespace: null
     project: apps
     destination:
       namespace: my-apps-3  

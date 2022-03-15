@@ -10,7 +10,7 @@ apps:
     #namespace: null
     project: apps
     destination:
-      namespace: my-apps-1
+      namespace: my-apps
     #autoSync: true  
 
   helm-nginx:
@@ -18,7 +18,7 @@ apps:
     #namespace: null
     project: apps
     destination:
-      namespace: my-apps-2  
+      namespace: my-apps
     #autoSync: true    
 
   helm-guestbook:
@@ -26,7 +26,7 @@ apps:
     #namespace: null
     project: apps
     destination:
-      namespace: my-apps-3  
+      namespace: my-apps
     #autoSync: true    
 
 

@@ -2,7 +2,7 @@ default:
   app:
     namespace: argocd
     project: apps
-    autoSync: true
+    autoSync: false
 
 apps:
   apache:

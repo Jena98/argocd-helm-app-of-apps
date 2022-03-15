@@ -23,14 +23,14 @@ spec:
     namespace: {{ $val.destination.namespace }}
     server: "https://kubernetes.default.svc"
 
-  {{- if $val.autoSync | default $.Values.default.app.autoSync }}
+  #{{- if $val.autoSync | default $.Values.default.app.autoSync }}
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-  {{- end }}    
+  #{{- end }}    
 ---      
 {{- end }}
 {{- end }}

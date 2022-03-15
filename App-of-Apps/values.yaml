@@ -2,32 +2,32 @@ default:
   app:
     namespace: argocd
     project: apps
-    autoSync: true
+    #autoSync: true
 
 apps:
   apache:
     enabled: true
-    #namespace: null
+    namespace: null
     project: apps
     destination:
       namespace: my-apps-1
-    autoSync: true  
+    #autoSync: true  
 
   helm-nginx:
     enabled: true
-    #namespace: null
+    namespace: null
     project: apps
     destination:
       namespace: my-apps-2  
-    autoSync: true    
+    #autoSync: true    
 
   helm-guestbook:
     enabled: true
-    #namespace: null
+    namespace: null
     project: apps
     destination:
       namespace: my-apps-3  
-    autoSync: true    
+    #autoSync: true    
 
 
 

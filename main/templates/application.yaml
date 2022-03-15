@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: aaa-main
-  namespace: argocd
+  name: {{ $.Values.name }}
+  namespace: {{ $.Values.namespace }}
   
 spec:
-  project: apps
+  project: {{ $.Values.project }}
 
   source:
     path: {{ $.Values.source.path }}

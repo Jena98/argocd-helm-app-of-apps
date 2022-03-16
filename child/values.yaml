@@ -15,11 +15,15 @@ apps:
     project: null
     autoSync: true
  
-
   helm-guestbook:
     enabled: true
     project: null
     autoSync: true
+
+  kustomize-guestbook:
+    enabled: true
+    project: null
+    autoSync: true  
 
 
 

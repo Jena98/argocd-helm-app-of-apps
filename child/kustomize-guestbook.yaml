@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
     targetRevision: HEAD
-    path: kustomize-guestbook
+    path: apps/kustomize-guestbook
   
   destination:
     server: https://kubernetes.default.svc

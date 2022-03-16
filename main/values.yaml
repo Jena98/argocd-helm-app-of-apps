@@ -3,7 +3,7 @@ namespace: argocd
 project: apps
 
 source:
-  path: App-of-Apps
+  path: child
   repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
   targetRevision: HEAD
 

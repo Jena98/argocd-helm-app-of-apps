@@ -1,0 +1,25 @@
+default:
+  app:
+    namespace: argocd
+    project: apps
+    autoSync: false
+
+apps:
+  apache:
+    enabled: true
+    project: null
+    autoSync: true
+
+  helm-nginx:
+    enabled: true
+    project: null
+    autoSync: true
+ 
+
+  helm-guestbook:
+    enabled: true
+    project: null
+    autoSync: true
+
+
+

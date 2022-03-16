@@ -25,5 +25,10 @@ apps:
     project: null
     autoSync: true  
 
+  helm-dependency:
+    enabled: true
+    project: null
+    autoSync: true     
+
 
 

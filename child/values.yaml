@@ -21,12 +21,12 @@ apps:
     autoSync: true
 
   kustomize-guestbook:
-    enabled: true
+    enabled: false
     project: null
     autoSync: true  
 
   helm-dependency:
-    enabled: true
+    enabled: false
     project: null
     autoSync: true     
 

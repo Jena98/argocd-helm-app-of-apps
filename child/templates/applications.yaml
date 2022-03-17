@@ -12,7 +12,7 @@ spec:
   source:
     path: {{ $key }}
     repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
-    targetRevision: HEAD
+    targetRevision: {{ $val.targetRevision | default $.Values.default.app.targetRevision }}
     helm:
       valueFiles:
         - values.yaml

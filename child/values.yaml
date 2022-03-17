@@ -2,6 +2,7 @@ default:
   app:
     namespace: argocd
     project: apps
+    targetRevision: v3-main-child-helm
     autoSync: false
 
 apps:

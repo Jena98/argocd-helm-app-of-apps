@@ -10,7 +10,7 @@ spec:
   source:
     path: child
     repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
-    targetRevision: v3-main-child-helm
+    targetRevision: HEAD
     helm:
       valueFiles:
         - values.yaml

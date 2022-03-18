@@ -12,3 +12,9 @@ argocd app create aaa-main --repo https://github.com/jenana-devops/argocd-helm-a
 --path child --revision v3-main-child-helm \
 --dest-namespace my-apps --dest-server https://kubernetes.default.svc
 ```
+
+#### OR
+#### helm 사용
+```bash
+helm install aaa main -n <ns>
+```

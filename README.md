@@ -6,7 +6,7 @@ kubectl apply -f main.yaml
 ```
 
 #### OR
-#### argocd cli 사용
+#### argocd cli 사용 (BEST!)
 ```bash
 argocd app create aaa-main --repo https://github.com/jenana-devops/argocd-helm-app-of-apps.git \
 --path child --revision v3-main-child-helm \

@@ -1,9 +1,3 @@
-default:
-  app:
-    namespace: argocd
-    project: apps
-    autoSync: false
-
 apps:
   apache:
     enabled: true
@@ -31,4 +25,9 @@ apps:
     autoSync: true     
 
 
-
+default:
+  app:
+    namespace: argocd
+    project: apps
+    targetRevision: v3-main-child-helm
+    autoSync: false

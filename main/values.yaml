@@ -1,0 +1,16 @@
+name: aaa-main
+namespace: argocd
+project: apps
+
+source:
+  path: child
+  repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
+  targetRevision: HEAD
+
+destination:
+  namespace: my-apps
+
+autoSync: true
+
+
+

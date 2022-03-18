@@ -3,20 +3,26 @@ kind: Application
 metadata:
   name: aaa-main
   namespace: argocd
-  labels:
-    krmt.io/group: apps
+  
 spec:
   project: apps
+
   source:
+    path: child
     repoURL: https://github.com/jenana-devops/argocd-helm-app-of-apps.git
-    targetRevision: HEAD
-    path: apps
+    targetRevision: v3-main-child-helm
+    helm:
+      valueFiles:
+        - values.yaml
+
   destination:
-    name: "https://kubernetes.default.svc"
     namespace: my-apps
+    server: "https://kubernetes.default.svc"
+
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      

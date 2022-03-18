@@ -18,3 +18,8 @@ argocd app create aaa-main --repo https://github.com/jenana-devops/argocd-helm-a
 ```bash
 helm install aaa main -n <ns>
 ```
+
+#### delete app
+```bash
+argocd app delete aaa-main
+```

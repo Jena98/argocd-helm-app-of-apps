@@ -1,11 +1,12 @@
 # argocd-helm-app-of-apps
 
-### kubectl 명령어 사용
+#### kubectl 명령어 사용
 ```bash
 kubectl apply -f main.yaml
 ```
 
-### argocd cli 사용
+#### OR
+#### argocd cli 사용
 ```bash
 argocd app create aaa-main --repo https://github.com/jenana-devops/argocd-helm-app-of-apps.git \
 --path child --revision v3-main-child-helm \

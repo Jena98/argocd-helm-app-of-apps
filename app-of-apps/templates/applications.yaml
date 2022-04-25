@@ -10,7 +10,7 @@ spec:
   project: {{ $val.project | default $.Values.default.app.project }}
 
   source:
-    path: {{ $key }}
+    path: charts/{{ $key }}
     repoURL: "https://github.com/jenana-devops/argocd-helm-app-of-apps.git"
     targetRevision: {{ $val.targetRevision | default $.Values.default.app.targetRevision }}
     helm:

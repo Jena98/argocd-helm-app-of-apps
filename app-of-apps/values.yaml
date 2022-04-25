@@ -1,0 +1,29 @@
+apps:
+  helm-nginx:
+    enabled: true
+    project: null
+    targetRevision: null
+    namespace: null
+    autoSync: null
+ 
+  helm-guestbook:
+    enabled: true
+    project: null
+    targetRevision: null
+    namespace: null    
+    autoSync: null
+
+  helm-dependency:
+    enabled: true
+    targetRevision: null
+    namespace: null    
+    project: null
+    autoSync: null   
+
+
+default:
+  app:
+    project: apps
+    targetRevision: HEAD
+    namespace: apps
+    autoSync: true

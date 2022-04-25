@@ -5,7 +5,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ $key }}
-  namespace: {{ $val.namespace | default $.Values.default.app.namespace }}
+  namespace: argocd
 spec:
   project: {{ $val.project | default $.Values.default.app.project }}
 
@@ -18,7 +18,7 @@ spec:
         - values.yaml
 
   destination:
-    namespace: my-apps
+    namespace: {{ $val.namespace | default $.Values.default.app.namespace }}
     server: "https://kubernetes.default.svc"
 
 {{- if $val.autoSync | default $.Values.default.app.autoSync }}

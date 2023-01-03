@@ -1,0 +1,33 @@
+controller:
+  affinity:    
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: role
+            operator: In
+            values:
+            - ops
+
+  service:
+    annotations: 
+      service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "3600"
+      service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+      service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:ap-southeast-1:962524913451:certificate/f432be87-2f61-4dcf-81bd-e7d8dd233b36
+      service.beta.kubernetes.io/aws-load-balancer-backend-protocol: 'http'
+      service.beta.kubernetes.io/aws-load-balancer-ssl-ports: '443'
+      service.beta.kubernetes.io/aws-load-balancer-type: nlb  
+
+    targetPorts:
+      https: http # TLS (https) terminated at ELB, so internal endpoint is 'http'
+
+defaultBackend:      
+  affinity:    
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: role
+            operator: In
+            values:
+            - ops

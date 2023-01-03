@@ -1,29 +1,41 @@
 apps:
-  helm-nginx:
-    enabled: true
-    project: null
+  aws-load-balancer-controller:
+    enabled: false
+    project: addons
+    path: charts/aws-load-balancer-controller
+    repoURL: null
     targetRevision: null
-    namespace: null
+    valueFiles: null
+    namespace: addons
     autoSync: null
  
-  helm-guestbook:
-    enabled: true
-    project: null
+  ingress-nginx:
+    enabled: false
+    project: addons
+    path: charts/ingress-nginx
+    repoURL: null
     targetRevision: null
-    namespace: null    
+    valueFiles: null
+    namespace: addons
     autoSync: null
 
-  helm-dependency:
-    enabled: true
+  metrics-server:
+    enabled: false
+    project: addons
+    path: charts/metrics-server
+    repoURL: null
     targetRevision: null
-    namespace: null    
-    project: null
+    valueFiles: null
+    namespace: addons
     autoSync: null   
 
 
 default:
   app:
-    project: apps
+    project: null
+    path: null
+    repoURL: https://github.com/Jena98/argocd-helm-app-of-apps.git
     targetRevision: HEAD
-    namespace: apps
+    valueFiles: values.yaml
+    namespace: null
     autoSync: true
